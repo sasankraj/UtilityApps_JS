@@ -139,51 +139,51 @@ while(true) {
   console.log(chalk.magenta("\t\t\t\t\t|------------------------|"));
   console.log(chalk.blue.bold('\t\t\t\t\t| Welcome to Utility Apps|'));
   console.log(chalk.magenta("\t\t\t\t\t|------------------------|"));
-  const selectedUtilityOption = parseInt(readLineSync.question('Which utility function would you like to use?\n1. urlEncode/Decode\n2. base64Encode/Decode\n3. StringHashing\n4. ToEpoch/ToHumanDate Converter\n5. RGBtoHex/HexToRGB Converter\n6. Unit Converter\n7. Bin/Hex/Dec/Oct Converter\n0. Exit\nyour choice : '));
+  const selectedUtilityOption = parseInt(readLineSync.question('\nWhich utility function would you like to use?\n1. urlEncode/Decode\n2. base64Encode/Decode\n3. StringHashing\n4. ToEpoch/ToHumanDate Converter\n5. RGBtoHex/HexToRGB Converter\n6. Unit Converter\n7. Bin/Hex/Dec/Oct Converter\n0. Exit\nyour choice : '));
 
   console.log(`You selected ${selectedUtilityOption}\n`);
   switch(selectedUtilityOption) {
 
     case 1:
       console.log("1. encode\n2. decode");
-      const o1 = readLineSync.question("your choice : ");
+      const o1 = readLineSync.question("\nyour choice : ");
       if(o1 === "1") {
-      const urlToEncode = readLineSync.question('Please enter the url to be encoded\n');
+      const urlToEncode = readLineSync.question('\nPlease enter the url to be encoded\n');
       const encodedURL = urlEncode(urlToEncode);
       console.log(encodedURL);
       }
       else if(o1 === "2") {
-      const urlToDecode = readLineSync.question('Please enter the url to be decoded\n');
+      const urlToDecode = readLineSync.question('\nPlease enter the url to be decoded\n');
       const decodedURL = urlDecode(urlToDecode);
       console.log(decodedURL);
       }
       else {
-        console.log("Invalid choice");
+        console.log("\nInvalid choice");
       }
       break;
 
     case 2:
       console.log("1. encode\n2. decode");
-      const o2 = readLineSync.question("your choice : ");
+      const o2 = readLineSync.question("\nyour choice : ");
       if(o2 === "1") {
-      const original_str = readLineSync.question('Please enter the string to be encoded\n');
+      const original_str = readLineSync.question('\nPlease enter the string to be encoded\n');
       const base64_encoded_str = base64Encoder(original_str);
       console.log(base64_encoded_str);
       }
       else if(o2 === "2") {
-      const base64_str = readLineSync.question('Please enter the string to be decoded\n');
+      const base64_str = readLineSync.question('\nPlease enter the string to be decoded\n');
       const actual_str = base64Decoder(base64_str);
       console.log(actual_str);
       }
       else {
-        console.log("Invalid choice");
+        console.log("\nInvalid choice");
       }
       break;
 
     case 3:
       let hashed_str;
       const simple_str = readLineSync.question('Please enter a string to be hashed\n');
-      const hashopt = readLineSync.question('Please mention the type of hashing you wanna perform.\n1. md5\n2. sha1\n3. sha256\n4. sha512\nyour choice : ');
+      const hashopt = readLineSync.question('\nPlease mention the type of hashing you wanna perform.\n\n1. md5\n2. sha1\n3. sha256\n4. sha512\n\nyour choice : ');
       let hashType;
       switch (Number(hashopt)) {
         case 1:
@@ -210,9 +210,9 @@ while(true) {
 
     case 4:
       console.log("1. toEpoch\n2. toHumanDate");
-      const o3 = readLineSync.question("your choice : ");
+      const o3 = readLineSync.question("\nyour choice : ");
       if(o3 === "1") {
-      const yr = readLineSync.question('Enter the year ');
+      const yr = readLineSync.question('\nEnter the year ');
       const mnth = readLineSync.question('Enter the month ');
       const date = readLineSync.question('Enter the date ');
       const hrs = readLineSync.question('Enter the hours ');
@@ -223,92 +223,92 @@ while(true) {
       console.log(epoch_val);
       }
       else if(o3 === "2") {
-      const epochVal = readLineSync.question('Enter an epoch value (example - 1611041456)\n');
+      const epochVal = readLineSync.question('\nEnter an epoch value (example - 1611041456)\n');
       console.log(toHumanDate(epochVal));
       }
       else {
-        console.log('Invalid Choice');
+        console.log('\nInvalid Choice');
       }
       break;
 
     case 5:
       console.log("1. RGBtoHex\n2. HextoRGB");
-      const o4 = readLineSync.question("your choice : ");
+      const o4 = readLineSync.question("\nyour choice : ");
       if(o4 === "1") {
-      const red = readLineSync.question('Enter a value for red ');
+      const red = readLineSync.question('\nEnter a value for red ');
       const green = readLineSync.question('Enter a value for green ');
       const blue = readLineSync.question('Enter a value for blue ');
-      console.log("Hex Value " + rgbToHex(red,green,blue));
+      console.log("\nHex Value " + rgbToHex(red,green,blue));
       }
       else if(o4 === "4") {
-      const hexVal = readLineSync.question('Enter a hex value ');
-      console.log('RGB equivalent ' + hexToRGB(hexVal));
+      const hexVal = readLineSync.question('\nEnter a hex value ');
+      console.log('\nRGB equivalent ' + hexToRGB(hexVal));
       }
       else {
-        console.log("Invalid Choice");
+        console.log("\nInvalid Choice");
       }
       break;
 
     case 6:
       console.log('1. Celsius/Fahrenheit Converter\n2. kilometers/miles Converter\n3. Feet/Centimeters Converter');
-      const o5 = readLineSync.question('your choice :  ');
+      const o5 = readLineSync.question('\nyour choice :  ');
       switch (Number(o5)) {
         case 1:
-          console.log('1. Celsius to Fahrenheit\n2.Fahrenheit to Celsius');
-          const oo51 = readLineSync.question('your choice :  ');
+          console.log('\n1. Celsius to Fahrenheit\n2.Fahrenheit to Celsius');
+          const oo51 = readLineSync.question('\nyour choice :  ');
           if(oo51 === "1") {
-            const cel = readLineSync.question('Enter the temperature in Celsius:  ');
+            const cel = readLineSync.question('\nEnter the temperature in Celsius:  ');
             console.log(cel + 'ºC = ' + celTofahrehnheit(cel) + 'ºF');
           }
 
           else if(oo51 === "2") {
-            const fah = readLineSync.question('Enter the temperature in Fahrenheit:  ');
+            const fah = readLineSync.question('\nEnter the temperature in Fahrenheit:  ');
             console.log(fah + 'ºF = ' + fahrehnheitTocel(fah) + 'ºC');
           }
 
           else {
-            console.log("Invalid choice");
+            console.log("\nInvalid choice");
           }
           break;
 
         case 2:
-          console.log('1. Kilometers to Miles\n2. Miles to Kilometers');
-          const oo52 = readLineSync.question('your choice :  ');
+          console.log('\n1. Kilometers to Miles\n2. Miles to Kilometers');
+          const oo52 = readLineSync.question('\nyour choice :  ');
           if(oo52 === "1") {
-            const kil = readLineSync.question('Enter the distance in Kilometers:  ');
+            const kil = readLineSync.question('\nEnter the distance in Kilometers:  ');
             console.log(kil + 'kms = ' + kiloTomil(kil) + 'mi');
           }
 
           else if(oo52 === "2") {
-            const mil = readLineSync.question('Enter the distance in miles:  ');
+            const mil = readLineSync.question('\nEnter the distance in miles:  ');
             console.log(mil + 'mi = ' + milTokil(mil) + 'kms');
           }
 
           else {
-            console.log("Invalid choice");
+            console.log("\nInvalid choice");
           }
           break;
 
         case 3:
-          console.log('1. Feet to Centimeters\n2. Centimeters to Feet');
-          const oo53 = readLineSync.question('your choice :  ');
+          console.log('\n1. Feet to Centimeters\n2. Centimeters to Feet');
+          const oo53 = readLineSync.question('\nyour choice :  ');
           if(oo53 === "1") {
-            const ft = readLineSync.question('Enter the height in Feet:  ');
+            const ft = readLineSync.question('\nEnter the height in Feet:  ');
             console.log(ft + 'ft = ' + feetTocen(ft) + 'cms');
           }
 
           else if(oo53 === "2") {
-            const cm = readLineSync.question('Enter the height in Centimeters:  ');
+            const cm = readLineSync.question('\nEnter the height in Centimeters:  ');
             console.log(cm + 'cms = ' + cenTofeet(cm) + 'ft');
           }
 
           else {
-            console.log("Invalid choice");
+            console.log("\nInvalid choice");
           }
           break;
 
         default:
-          console.log('Invalid Option\n');
+          console.log('\nInvalid Option\n');
           break;
       }
       break;
@@ -316,7 +316,7 @@ while(true) {
     case 7:
       // simple formula = parseInt(num, baseFrom).toString(baseTo);
       console.log('Do you wanna \n1. enter the bases by yourself ?\n2. Use the available utilities ?\n');
-      const inputType = parseInt(readLineSync.question('your choice : '));
+      const inputType = parseInt(readLineSync.question('\nyour choice : '));
       if(inputType === 1) {
         console.log('Enter the bases only');
         let fr = readLineSync.question('convert from base (2/8/10/16) ');
@@ -338,7 +338,7 @@ while(true) {
       }
       else if(inputType === 2) {
         console.log('Utilities Available\n1. Decimal <=> Binary\n2. Decimal <=> Octal\n3. Decimal <=> Hex\n4. Binary <=> Octal\n5. Binary <=> Hex\n6. Octal <=> Hex');
-        const option = parseInt(readLineSync.question('your choice : '));
+        const option = parseInt(readLineSync.question('\nyour choice : '));
         switch (option) {
             case 1:
               const subopt1 = parseInt(readLineSync.question('1. Decimal to Binary\n2. Binary to Decimal\nyour choice : '));
